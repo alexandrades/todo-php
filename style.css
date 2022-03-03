@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header {
+    background-color: rgb(23, 23, 71);
+    color: rgb(233, 233, 233);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.item {
+    padding: 10px 5px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 700px;
+}
+
+.dark {
+    background-color: rgb(214, 214, 214);
+}
+
+.light {
+    background-color: rgb(230, 230, 230);
+}
