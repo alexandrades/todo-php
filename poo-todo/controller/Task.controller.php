@@ -1,19 +1,22 @@
 <?php
     require_once '../service/Task.service.php';
 
-    echo "<h1>TUDO CERTO</h1>"
+    $body = json_decode(file_get_contents("php://input"));
+    
+    switch($body->action){
+        case 'list' :
+            echo TaskService::get_all_tasks();
+            break;
+            
+        case 'save' :
+            if(isset($body->titulo) && isset($body->descricao)){
+                TaskService::save_new_task($body->titulo, $body->descricao);
+                echo TaskService::get_all_tasks();
+            }
+            break;
 
-    // TaskService::save_new_task($_POST['titulo'], $_POST['descricao']);
-    // TaskService::render_all_tasks();
-
-    // switch($_POST['action']){
-    //     case 'list' :
-    //         TaskService::render_all_tasks();
-    //         break;
-        
-    //     case 'save' :
-    //         if(isset($_POST['titulo']) && isset($_POST['descricao'])){
-    //         }
-    //         break;
-    // }
+        case 'delete' :
+            echo TaskService::delete_task($body->taskId);
+            break;
+    }
 ?>
