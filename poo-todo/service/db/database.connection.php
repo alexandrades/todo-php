@@ -5,8 +5,8 @@
         private const  SERVER = 'localhost';
         private const PORT = '5432';
         private const DATABASE = 'tarefas';
-        private const USER = 'postgres';
-        private const PASSWORD = 'alexandrade1';
+        private const USER = 'SEU USUARIO';
+        private const PASSWORD = 'SUA SENHA';
         public $connection;
 
         function __construct()
